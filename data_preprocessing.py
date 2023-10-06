@@ -1,5 +1,6 @@
 import pandas as pd
 from loading_data import loading_data
+import numpy as np
 
 def data_preprocess():
     data = loading_data()
