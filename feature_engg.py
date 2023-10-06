@@ -21,7 +21,7 @@ def feature_engg():
     data.went_on_backorder=le.fit_transform(data.went_on_backorder)
     print(data.head())
 
-    X=data.drop(columns="went_on_backorder")
+    X=data.drop(columns="went_on_backorder",axis=1)
     y=data[["went_on_backorder"]]
     target = le.fit_transform(np.ravel(y))
     
