@@ -6,7 +6,7 @@ from feature_engg import feature_engg
 
 def data_visualization():
 
-    data=feature_engg()
+    data=data_preprocess()
     names=["national_inv","sales_1_month", "sales_9_month", "min_bank", "perf_6_month_avg","perf_12_month_avg", "local_bo_qty"]
 
     for i,j in enumerate(names):
