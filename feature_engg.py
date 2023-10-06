@@ -22,7 +22,6 @@ def feature_engg():
 
     X=data.drop(columns="went_on_backorder",axis=1)
     y=data[["went_on_backorder"]]
-    le = LabelEncoder()
 
     sm = SMOTE()
     X_upd, y_upd = sm.fit_resample(X, y.ravel())
