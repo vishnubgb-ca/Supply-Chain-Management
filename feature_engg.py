@@ -22,7 +22,7 @@ def feature_engg():
     print(data.head())
 
     X=data.drop(columns="went_on_backorder")
-    y=data["went_on_backorder"]
+    y=data[["went_on_backorder"]]
     target = le.fit_transform(np.ravel(y))
     
     sm = SMOTE()
