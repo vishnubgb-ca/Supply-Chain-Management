@@ -1,6 +1,7 @@
 import pandas as pd
 from loading_data import loading_data
 import numpy as np
+from scipy import stats
 
 def data_preprocess():
     data = loading_data()
