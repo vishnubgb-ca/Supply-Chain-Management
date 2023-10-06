@@ -11,6 +11,7 @@ from scipy import stats
 def feature_engg():
     data = data_preprocess()
     le=LabelEncoder()
+    
     data.potential_issue=le.fit_transform(data.potential_issue)
     data.deck_risk=le.fit_transform(data.deck_risk)
     data.oe_constraint=le.fit_transform(data.oe_constraint)
@@ -21,10 +22,11 @@ def feature_engg():
     print(data.head())
 
     X=data.drop(columns="went_on_backorder",axis=1)
-    y=data[["went_on_backorder"]]
-
+    y=data["went_on_backorder"]
+    target = le.fit_transform(np.ravel(y))
+    
     sm = SMOTE()
-    X_upd, y_upd = sm.fit_resample(X, y.ravel())
+    X_upd, y_upd = sm.fit_resample(X, target.ravel())
 
     data_new=X_upd
     data_new['went_on_backorder']=y_upd
