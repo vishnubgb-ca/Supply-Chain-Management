@@ -12,6 +12,7 @@ def data_visualization():
         plt.figure(figsize=(12,15))
         plt.subplot(8,5,i+1)
         sns.boxplot(y=j,data=data)
+        plt.show()
 
     return data
 
