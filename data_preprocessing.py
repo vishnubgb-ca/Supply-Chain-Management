@@ -8,8 +8,8 @@ def data_preprocess():
     data.drop(columns=["sku","lead_time"],axis=1,inplace=True)
     data = data.dropna(axis=0, how='any')
     data.replace(to_replace = -99, value = np.nan)
-    data["perf_6_month_avg"] = data["perf_6_month_avg"].fillna(data["perf_6_month_avg"].median(), inplace=True)
-    data["perf_12_month_avg"] = data["perf_12_month_avg"].fillna(data["perf_12_month_avg"].median(), inplace=True)
+    data["perf_6_month_avg"] = data["perf_6_month_avg"].fillna(data["perf_6_month_avg"].median())
+    data["perf_12_month_avg"] = data["perf_12_month_avg"].fillna(data["perf_12_month_avg"].median())
     print ("Missing values after removal of rows with empty values\n\n",data.isnull().any(),sep='')
     print(data)
     #names=["national_inv",	"in_transit_qty",	"forecast_3_month",	"forecast_6_month"	,"forecast_9_month"	,"sales_1_month", "sales_3_month", "sales_6_month", "sales_9_month", "min_bank", "pieces_past_due", "perf_6_month_avg","perf_12_month_avg", "local_bo_qty"]
