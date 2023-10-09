@@ -26,10 +26,10 @@ def feature_engg():
     target = le.fit_transform(np.ravel(y))
     
     sm = SMOTE()
-    #X_upd, y_upd = sm.fit_resample(X, target.ravel())
+    X_upd, y_upd = sm.fit_resample(X, target.ravel())
 
-    data_new=X #X_upd
-    data_new['went_on_backorder']=target.ravel() 
+    data_new=X_upd
+    data_new['went_on_backorder']=y_upd 
     data_new.to_csv("backorder_prediction.csv")
 
     return data_new
