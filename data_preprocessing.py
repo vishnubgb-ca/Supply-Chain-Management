@@ -1,10 +1,10 @@
 import pandas as pd
-from loading_data import loading_data
+from data_analysis import data_analysis
 import numpy as np
 from scipy import stats
 
 def data_preprocess():
-    data = loading_data()
+    data = data_analysis()
     names=["national_inv",	"in_transit_qty",	"forecast_3_month",	"forecast_6_month"	,"forecast_9_month"	,"sales_1_month", "sales_3_month", "sales_6_month", "sales_9_month", "min_bank", "pieces_past_due", "perf_6_month_avg","perf_12_month_avg", "local_bo_qty"]
 
     #outlier detection
