@@ -4,14 +4,11 @@ def data_analysis():
     data=loading_data()
     print(data.head())
     print(data.tail())
-    data.drop(columns=["sku","lead_time"],axis=1,inplace=True)
     print(data.describe())
     print ("Rows     : " ,data.shape[0])
     print ("Columns  : \n" ,data.shape[1])
     print ("Features : \n" ,data.columns.tolist())
     print ("Missing values\n\n",data.isnull().any(),sep='')
-    data = data.dropna(axis=0, how='any')
-    print ("Missing values after removal of rows with empty values\n\n",data.isnull().any(),sep='')
     print ("Unique values\n\n",data.nunique(),sep='')
     return data
 
