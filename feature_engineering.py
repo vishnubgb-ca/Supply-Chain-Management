@@ -30,13 +30,13 @@ def feature_engg():
     
     le=LabelEncoder()
     
-    #data['potential_issue']=le.fit_transform(data['potential_issue'])
-    #data['deck_risk']=le.fit_transform(data['deck_risk'])
-    #data['oe_constraint']=le.fit_transform(data['oe_constraint'])
-    #data['ppap_risk']=le.fit_transform(data['ppap_risk'])
-    #data['stop_auto_buy']=le.fit_transform(data['stop_auto_buy'])
-    #data['rev_stop']=le.fit_transform(data['rev_stop'])
-    #data['went_on_backorder']=le.fit_transform(data['went_on_backorder'])
+    data['potential_issue']=le.fit_transform(data['potential_issue'])
+    data['deck_risk']=le.fit_transform(data['deck_risk'])
+    data['oe_constraint']=le.fit_transform(data['oe_constraint'])
+    data['ppap_risk']=le.fit_transform(data['ppap_risk'])
+    data['stop_auto_buy']=le.fit_transform(data['stop_auto_buy'])
+    data['rev_stop']=le.fit_transform(data['rev_stop'])
+    data['went_on_backorder']=le.fit_transform(data['went_on_backorder'])
     print(data.head())
 
     X=data.drop(columns="went_on_backorder")
