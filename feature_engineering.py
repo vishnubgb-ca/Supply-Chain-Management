@@ -28,7 +28,7 @@ def feature_engg():
     for j in ["national_inv",	"in_transit_qty",	"forecast_3_month",	"forecast_6_month"	,"forecast_9_month"	,"sales_1_month", "sales_3_month", "sales_6_month", "sales_9_month", "min_bank", "pieces_past_due", "perf_6_month_avg","perf_12_month_avg", "local_bo_qty"]: 
         remove_outliers(data,j)
     
-    #le=LabelEncoder()
+    le=LabelEncoder()
     
     #data['potential_issue']=le.fit_transform(data['potential_issue'])
     #data['deck_risk']=le.fit_transform(data['deck_risk'])
