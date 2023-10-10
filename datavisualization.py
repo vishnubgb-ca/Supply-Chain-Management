@@ -6,9 +6,9 @@ import matplotlib.pyplot as plt
 def data_visualization():
 
     data=data_preprocess()
-    plt.figure(figsize=(10,8))
-    sns.heatmap(data.corr(), annot=True, cmap="coolwarm", fmt=".2f")
-    plt.show()
+    #plt.figure(figsize=(10,8))
+    #sns.heatmap(data.corr(), annot=True, cmap="coolwarm", fmt=".2f")
+    #plt.show()
     
     names=["national_inv","sales_1_month", "sales_9_month", "min_bank", "perf_6_month_avg","perf_12_month_avg", "local_bo_qty"]
 
