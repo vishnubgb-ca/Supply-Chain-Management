@@ -5,7 +5,7 @@ from scipy import stats
 
 def data_preprocess():
     data = data_analysis()
-    data.drop(columns=["sku","lead_time"],axis=1,inplace=True)
+    data = data.drop(columns=["sku","lead_time"],axis=1)
     data = data.dropna(axis=0, how='any')
     data = data.replace(to_replace = -99, value = np.nan)
     data["perf_6_month_avg"] = data["perf_6_month_avg"].fillna(data["perf_6_month_avg"].median())
