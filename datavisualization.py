@@ -12,7 +12,7 @@ def data_visualization():
 
     names_cat=["deck_risk","ppap_risk","stop_auto_buy"]
     for i in names_cat:
-        plt.figure(figsize=(10,8))
+        plt.subplots(1,1, figsize=(10,8))#plt.figure(figsize=(10,8))
         sns.displot(x=data[i])
         plt.xlabel(i)
         plt.title(i)
