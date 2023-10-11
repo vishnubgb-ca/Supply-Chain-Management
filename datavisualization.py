@@ -9,6 +9,14 @@ def data_visualization():
     #plt.figure(figsize=(10,8))
     #sns.heatmap(data.corr(), annot=True, cmap="coolwarm", fmt=".2f")
     #plt.show()
+
+    names_cat=["deck_risk","ppap_risk","stop_auto_buy"]
+    for i in names_cat:
+        plt.figure(figsize=(10,8))
+        sns.displot(x=data[i])
+        plt.xlabel(i)
+        plt.title(i)
+        plt.show()
     
     names=["national_inv","sales_1_month", "sales_9_month", "min_bank", "perf_6_month_avg","perf_12_month_avg", "local_bo_qty"]
 
@@ -25,13 +33,6 @@ def data_visualization():
         plt.title(i)
         plt.show()
 
-    names_cat=["deck_risk","ppap_risk","stop_auto_buy"]
-    for i in names_cat:
-        plt.figure(figsize=(10,8))
-        sns.displot(x=data[i])
-        plt.xlabel(i)
-        plt.title(i)
-        plt.show()
     
     return data
 
