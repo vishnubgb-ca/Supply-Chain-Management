@@ -13,7 +13,7 @@ def data_visualization():
     names_cat=["deck_risk","ppap_risk","stop_auto_buy"]
     for i in names_cat:
         plt.figure(figsize=(5,5))
-        sns.distplot(x=data[i])
+        sns.countplot(x=data[i])
         plt.xlabel(i)
         plt.title(i)
     plt.show()
