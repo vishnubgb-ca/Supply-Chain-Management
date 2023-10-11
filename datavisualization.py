@@ -14,7 +14,7 @@ def data_visualization():
     for i in names_cat:
         plt.figure(figsize=(5,5))
         sns.countplot(x=data[i])
-        plt.ylabel(i)
+        #plt.ylabel(i)
         plt.xlabel("went_on_backorder")
         plt.title(i)
     plt.show()
