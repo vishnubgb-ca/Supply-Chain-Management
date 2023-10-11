@@ -48,7 +48,7 @@ def feature_engg():
 
     data_new=X_upd
     data_new['went_on_backorder']=y_upd 
-    data_new.to_csv("backorder_prediction.csv")
+    data_new.to_csv("backorder_prediction.csv",index=False)
 
     return data_new
 
