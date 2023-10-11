@@ -27,13 +27,13 @@ def data_visualization():
         sns.boxplot(y=j,data=data)
     plt.show()
 
-    for i in names:
-        plt.figure(figsize=(5,5))
-        plt.bar(data["went_on_backorder"],data[i])
-        plt.ylabel(i)
-        plt.xlabel("went_on_backorder")
-        plt.title(i)
-    plt.show()
+    #for i in names:
+    #    plt.figure(figsize=(5,5))
+    #    plt.bar(data["went_on_backorder"],data[i])
+    #    plt.ylabel(i)
+    #    plt.xlabel("went_on_backorder")
+    #    plt.title(i)
+    #plt.show()
 
     
     return data
