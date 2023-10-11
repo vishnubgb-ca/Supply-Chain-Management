@@ -20,7 +20,7 @@ def data_visualization():
 
     for i in names:
         plt.figure(figsize=(10,8))
-        plt.bar(df["went_on_backorder"],data[i])
+        plt.bar(data["went_on_backorder"],data[i])
         plt.xlabel(numeric)
         plt.title(numeric)
         plt.show()
