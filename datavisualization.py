@@ -20,7 +20,7 @@ def data_visualization():
 
     for i in names:
         plt.figure(figsize=(10,8))
-        plt.bar(df["went_on_backorder"],df[i])
+        plt.bar(df["went_on_backorder"],data[i])
         plt.xlabel(numeric)
         plt.title(numeric)
         plt.show()
@@ -28,7 +28,7 @@ def data_visualization():
     names_cat=["deck_risk","ppap_risk","stop_auto_buy"]
     for i in names_cat:
         plt.figure(figsize=(10,8))
-        sns.displot(x=df[i])
+        sns.displot(x=data[i])
         plt.xlabel(i)
         plt.title(i)
         plt.show()
