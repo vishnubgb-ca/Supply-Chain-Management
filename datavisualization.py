@@ -1,7 +1,7 @@
 import seaborn as sns
 from data_preprocessing import data_preprocess
 import matplotlib.pyplot as plt
-
+import pandas as pd
 
 def data_visualization():
 
