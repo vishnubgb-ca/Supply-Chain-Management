@@ -2,11 +2,6 @@ pipeline{
     agent any
 
     stages{
-        stage("Install requirements"){
-            steps{
-                sh 'pip install plotly'
-            }
-        }
         stage("Extract Data"){
             steps{
                 sh 'python3 loading_data.py'
