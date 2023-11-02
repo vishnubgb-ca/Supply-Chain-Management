@@ -1,7 +1,6 @@
-import seaborn as sns
 from data_preprocessing import data_preprocess
-import matplotlib.pyplot as plt
 import pandas as pd
+import plotly.express as px
 
 def data_visualization():
 
@@ -12,20 +11,23 @@ def data_visualization():
 
     names_cat=["deck_risk","ppap_risk","stop_auto_buy"]
     for i in names_cat:
-        plt.figure(figsize=(5,5))
-        sns.countplot(x=data[i])
-        #plt.ylabel(i)
-        plt.xlabel("went_on_backorder")
-        plt.title(i)
-    plt.show()
+        list = []
+        list.append(i)
+        df = data.groupby(by=list).size().reset_index(name="counts")
+        fig=px.bar(data_frame=df, x=i, y="counts",color=i)
+        fig.update_layout(plot_bgcolor = "black")
+        fig.update_xaxes(showgrid=False)
+        fig.update_yaxes(showgrid=False)
+        fig.show()
     
     names=["national_inv","sales_1_month", "sales_9_month", "min_bank", "perf_6_month_avg","perf_12_month_avg", "local_bo_qty"]
 
-    for i,j in enumerate(names):
-        plt.figure(figsize=(7,5))
-        #plt.subplot(8,5,i+1)
-        sns.boxplot(y=j,data=data)
-    plt.show()
+    for j in names:
+        fig = px.box(data, y=j)
+        fig.update_layout(plot_bgcolor = "black")
+        fig.update_xaxes(showgrid=False,zeroline=False)
+        fig.update_yaxes(showgrid=False,zeroline=False)
+        fig.show()
 
     #for i in names:
     #    plt.figure(figsize=(5,5))
