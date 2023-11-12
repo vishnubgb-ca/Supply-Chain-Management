@@ -2,6 +2,11 @@ pipeline{
     agent any
 
     stages{
+        stage("Install req"){
+            steps{
+                sh 'pip install ipython'
+            }
+        }
         stage("Extract Data"){
             steps{
                 sh 'python3 loading_data.py'
