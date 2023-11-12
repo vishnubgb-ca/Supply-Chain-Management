@@ -2,11 +2,6 @@ pipeline{
     agent any
 
     stages{
-        stage("Install req"){
-            steps{
-                sh ' pip install -U kaleido'
-            }
-        }
         stage("Extract Data"){
             steps{
                 sh 'python3 loading_data.py'
