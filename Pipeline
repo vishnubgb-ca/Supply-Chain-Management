@@ -4,7 +4,7 @@ pipeline{
     stages{
         stage("Install req"){
             steps{
-                sh 'pip install ipython'
+                sh ' pip install -U kaleido'
             }
         }
         stage("Extract Data"){
