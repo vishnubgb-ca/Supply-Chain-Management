@@ -22,8 +22,8 @@ def data_visualization():
         #img_bytes = fig.to_image(format="png")
         #f2 = go.FigureWidget(fig)
         fig.show()
-        img_bytes = fig.to_image(format="png")
-        Image(img_bytes)
+        # img_bytes = fig.to_image(format="png")
+        # Image(img_bytes)
     
     names=["national_inv","sales_1_month", "sales_9_month", "min_bank", "perf_6_month_avg","perf_12_month_avg", "local_bo_qty"]
 
