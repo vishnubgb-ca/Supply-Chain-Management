@@ -14,8 +14,8 @@ def data_visualization():
     for i in names_cat:
         list = []
         list.append(i)
-        data = df.groupby(by=list).size().reset_index(name="counts")
-        fig=px.bar(data_frame=data, x=i, y="counts",color=i)
+        df = data.groupby(by=list).size().reset_index(name="counts")
+        fig=px.bar(data_frame=df, x=i, y="counts",color=i)
         fig.update_layout(plot_bgcolor = "black")
         fig.update_xaxes(showgrid=False)
         fig.update_yaxes(showgrid=False)
