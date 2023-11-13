@@ -2,6 +2,11 @@ from data_preprocessing import data_preprocess
 import pandas as pd
 import plotly.express as px
 from IPython.display import Image
+import warnings
+warnings.filterwarnings("ignore")
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
 
 def data_visualization():
 
