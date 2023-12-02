@@ -13,7 +13,7 @@ import io
 from PIL import Image
 
 # a =[]
-
+count = 0 
 def data_visualization():
 
     data=data_preprocess()
@@ -23,6 +23,7 @@ def data_visualization():
 
     names_cat=["deck_risk","ppap_risk","stop_auto_buy"]
     for i in names_cat:
+        count+=1
         list = []
         list.append(i)
         df = data.groupby(by=list).size().reset_index(name="counts")
@@ -31,7 +32,7 @@ def data_visualization():
         #fig.update_layout(plot_bgcolor = "black")
         fig.update_xaxes(showgrid=False)
         fig.update_yaxes(showgrid=False)
-        fig.write_image(f"count_{i}.jpg")
+        fig.write_image(f"{count}count_{i}.jpg")
         # a.append(fig)
         #img_bytes = fig.to_image(format="png")
         #f2 = go.FigureWidget(fig)
@@ -42,12 +43,13 @@ def data_visualization():
     names=["national_inv","sales_1_month", "sales_9_month", "min_bank", "perf_6_month_avg","perf_12_month_avg", "local_bo_qty"]
 
     for j in names:
+        count += 1
         fig = px.box(data, y=j)
         fig.update_layout(template='plotly_dark')
         # fig.update_layout(plot_bgcolor = "black")
         fig.update_xaxes(showgrid=False,zeroline=False)
         fig.update_yaxes(showgrid=False,zeroline=False)
-        fig.write_image(f"box_{j}.jpg")
+        fig.write_image(f"{count}box_{j}.jpg")
         # a.append(fig)
     #for i in names:
     #    plt.figure(figsize=(5,5))
