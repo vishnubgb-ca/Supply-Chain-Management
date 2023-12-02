@@ -21,7 +21,7 @@ def data_visualization():
     #sns.heatmap(data.corr(), annot=True, cmap="coolwarm", fmt=".2f")
     #plt.show()
     count = 0 
-    names_cat=["deck_risk","ppap_risk","stop_auto_buy"]
+    names_cat=["deck_risk","ppap_risk","stop_auto_buy","went_on_backorder"]
     for i in names_cat:
         count+=1
         list = []
