@@ -12,7 +12,7 @@ import plotly.io as pio
 import io
 from PIL import Image
 
-a =[]
+# a =[]
 
 def data_visualization():
 
@@ -31,8 +31,8 @@ def data_visualization():
         #fig.update_layout(plot_bgcolor = "black")
         fig.update_xaxes(showgrid=False)
         fig.update_yaxes(showgrid=False)
-        fig.show()
-        a.append(fig)
+        fig.write_image(f"count_{i}.jpg")
+        # a.append(fig)
         #img_bytes = fig.to_image(format="png")
         #f2 = go.FigureWidget(fig)
         # fig.write_image(f"{i}.pdf")
@@ -47,8 +47,8 @@ def data_visualization():
         # fig.update_layout(plot_bgcolor = "black")
         fig.update_xaxes(showgrid=False,zeroline=False)
         fig.update_yaxes(showgrid=False,zeroline=False)
-        # fig.write_image(f"{j}.pdf")
-        a.append(fig)
+        fig.write_image(f"box_{j}.jpg")
+        # a.append(fig)
     #for i in names:
     #    plt.figure(figsize=(5,5))
     #    plt.bar(data["went_on_backorder"],data[i])
@@ -59,17 +59,17 @@ def data_visualization():
 
 
 
-    figures = a
-    image_list = [pio.to_image(fig, format='png', width=1440, height=900, scale=1.5) for fig in figures]
-    for index, image in enumerate(image_list):
-        with io.BytesIO() as tmp:
-            tmp.write(image)  # write the image bytes to the io.BytesIO() temporary object
-            image = Image.open(tmp).convert('RGB')  # convert and overwrite 'image' to prevent creating a new variable
-            image_list[index] = image  # overwrite byte image data in list, replace with PIL converted image data
+    # figures = a
+    # image_list = [pio.to_image(fig, format='png', width=1440, height=900, scale=1.5) for fig in figures]
+    # for index, image in enumerate(image_list):
+    #     with io.BytesIO() as tmp:
+    #         tmp.write(image)  # write the image bytes to the io.BytesIO() temporary object
+    #         image = Image.open(tmp).convert('RGB')  # convert and overwrite 'image' to prevent creating a new variable
+    #         image_list[index] = image  # overwrite byte image data in list, replace with PIL converted image data
 
-    # pop first item from image_list, use that to access .save(). Then refer back to image_list to append the rest
-    image_list.pop(0).save(r'./STudent#583.pdf', 'PDF',
-                        save_all=True, append_images=image_list, resolution=100.0)  # TODO improve resolution
+    # # pop first item from image_list, use that to access .save(). Then refer back to image_list to append the rest
+    # image_list.pop(0).save(r'./STudent#583.pdf', 'PDF',
+    #                     save_all=True, append_images=image_list, resolution=100.0)  # TODO improve resolution
 
     
     return data
