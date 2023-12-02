@@ -13,14 +13,14 @@ import io
 from PIL import Image
 
 # a =[]
-count = 0 
+
 def data_visualization():
 
     data=data_preprocess()
     #plt.figure(figsize=(10,8))
     #sns.heatmap(data.corr(), annot=True, cmap="coolwarm", fmt=".2f")
     #plt.show()
-
+    count = 0 
     names_cat=["deck_risk","ppap_risk","stop_auto_buy"]
     for i in names_cat:
         count+=1
