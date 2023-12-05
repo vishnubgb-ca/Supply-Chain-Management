@@ -11,7 +11,7 @@ import seaborn as sns
 import plotly.io as pio
 import io
 from PIL import Image
-
+import string
 # a =[]
 
 def data_visualization():
@@ -20,7 +20,8 @@ def data_visualization():
     #plt.figure(figsize=(10,8))
     #sns.heatmap(data.corr(), annot=True, cmap="coolwarm", fmt=".2f")
     #plt.show()
-    count = 0 
+    count = 0
+    letters = list(string.ascii_lowercase)
     names_cat=["deck_risk","ppap_risk","stop_auto_buy","went_on_backorder"]
     for i in names_cat:
         count+=1
@@ -32,7 +33,7 @@ def data_visualization():
         #fig.update_layout(plot_bgcolor = "black")
         fig.update_xaxes(showgrid=False)
         fig.update_yaxes(showgrid=False)
-        fig.write_image(f"{count}count_{i}.jpg")
+        fig.write_image(f"{letters[count]}count_{i}.jpg")
         # a.append(fig)
         #img_bytes = fig.to_image(format="png")
         #f2 = go.FigureWidget(fig)
@@ -49,7 +50,7 @@ def data_visualization():
         # fig.update_layout(plot_bgcolor = "black")
         fig.update_xaxes(showgrid=False,zeroline=False)
         fig.update_yaxes(showgrid=False,zeroline=False)
-        fig.write_image(f"{count}box_{j}.jpg")
+        fig.write_image(f"{letters[count]}box_{j}.jpg")
         # a.append(fig)
     #for i in names:
     #    plt.figure(figsize=(5,5))
