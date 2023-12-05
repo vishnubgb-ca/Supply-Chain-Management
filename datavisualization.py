@@ -25,9 +25,9 @@ def data_visualization():
     names_cat=["deck_risk","ppap_risk","stop_auto_buy","went_on_backorder"]
     for i in names_cat:
         count+=1
-        list = []
-        list.append(i)
-        df = data.groupby(by=list).size().reset_index(name="counts")
+        lst = []
+        lst.append(i)
+        df = data.groupby(by=lst).size().reset_index(name="counts")
         fig=px.bar(data_frame=df, x=i, y="counts",color=i)
         fig.update_layout(template='plotly_dark')
         #fig.update_layout(plot_bgcolor = "black")
