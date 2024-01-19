@@ -33,7 +33,7 @@ def data_visualization():
         #fig.update_layout(plot_bgcolor = "black")
         fig.update_xaxes(showgrid=False)
         fig.update_yaxes(showgrid=False)
-        fig.write_image(f"{letters[count]}count_{i}.jpg")
+        fig.write_image(f"count_{i}.jpg")
         # a.append(fig)
         #img_bytes = fig.to_image(format="png")
         #f2 = go.FigureWidget(fig)
@@ -50,7 +50,7 @@ def data_visualization():
         # fig.update_layout(plot_bgcolor = "black")
         fig.update_xaxes(showgrid=False,zeroline=False)
         fig.update_yaxes(showgrid=False,zeroline=False)
-        fig.write_image(f"{letters[count]}box_{j}.jpg")
+        fig.write_image(f"box_{j}.jpg")
         # a.append(fig)
     #for i in names:
     #    plt.figure(figsize=(5,5))
