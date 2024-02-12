@@ -4,7 +4,7 @@ import os
 
 def loading_data():
     #data = pd.read_csv('./Kaggle_Test_Dataset_v2.csv')
-    hostname = os.environ.get["DB_HOST_NAME"]
+    hostname = os.environ.get("DB_HOST_NAME")
     print(hostname)
     username = os.getenv("DB_USER_NAME")
     print(username)
