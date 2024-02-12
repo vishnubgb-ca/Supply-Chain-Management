@@ -9,6 +9,9 @@ def loading_data():
     password = os.environ.get("DB_PASSWORD")
     databasename = os.environ.get("DB_DB_NAME")
     connection = pymysql.connect(host=hostname, user=username,password=password,database=databasename,charset='utf8mb4',cursorclass=pymysql.cursors.DictCursor)
+    sql_query = "SELECT * FROM backorder_prediction"
+    data = pd.read_sql(sql_query, connection)
+    connection.close()
     return data
 
 loading_data()
