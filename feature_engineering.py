@@ -15,6 +15,7 @@ def feature_engg():
     print("Old Shape: ", data.shape)
 
     def remove_outliers(data,par):
+        print(par)
         z = np.abs(stats.zscore(data[par]))
         a=np.where(z > 3)
         for i in a[0]:
