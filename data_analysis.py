@@ -5,6 +5,7 @@ def data_analysis():
     print(data.head())
     print(data.tail())
     print(data.describe())
+    print(data.info())
     print ("Rows     : " ,data.shape[0])
     print ("Columns  : \n" ,data.shape[1])
     print ("Features : \n" ,data.columns.tolist())
