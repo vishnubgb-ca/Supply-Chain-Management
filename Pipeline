@@ -1,6 +1,11 @@
 pipeline{
     agent any
-
+    environment{
+        db_hostname = credentials('db_hostname')
+        DB_USERNAME = credentials('db_username')
+        DB_NAME = credentials('db_name')
+        DB_PASSWORD = credentials('db_password')
+    }
     stages{
         stage("Extract Data"){
             steps{
