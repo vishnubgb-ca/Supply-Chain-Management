@@ -16,7 +16,7 @@ def feature_engg():
 
     def remove_outliers(data,par):
         print(par)
-        print(data.describe())
+        print(data.info())
         z = np.abs(stats.zscore(data[par]))
         a=np.where(z > 3)
         for i in a[0]:
