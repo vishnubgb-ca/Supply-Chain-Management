@@ -1,5 +1,5 @@
 import  pandas as pd
-import pymysql
+#import pymysql
 import os
 
 def loading_data():
